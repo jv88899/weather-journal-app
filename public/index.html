@@ -12,20 +12,25 @@
                 <h1>Weather Journal App</h1>
             </div>
             <!-- Zip Code Input Section -->
-            <div>
+            <div class="zip">
                 <label for="zip">Enter Zipcode here</label>
                 <input type="text" id="zip" placeholder="enter zip code here">
             </div>
             <!-- Feeling Input Section -->
-            <div>
+            <div class="feel">
+                <label for="feelings">How are you feeling today?</label>
+                <textarea id="feelings" placeholder="Enter your feelings here" rows="9" cols="50"></textarea>
+                <button id="generate" type="submit">Generate</button>
             </div>
             <!-- Feeling Display Section -->
-            <div>
-                <div>Most Recent Entry</div>
+            <div class="entry">
                 <div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
+                    <h2>Most Recent Entry</h2>
+                </div>
+                <div id="entry-holder">
+                    <div id="date"></div>
+                    <div id="temp"></div>
+                    <div id="content"></div>
                 </div>
             </div>
         </div>
