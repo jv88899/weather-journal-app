@@ -17,3 +17,8 @@ const PORT = 3000
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`)
 })
+
+// GET route
+app.get('/all', (req, res) => {
+    res.send(projectData)
+})
