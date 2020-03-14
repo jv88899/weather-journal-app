@@ -66,4 +66,11 @@ const getTemperature = async (zipCode, apiKey) => {
     return body.main.temp.toFixed()
 }
 
+// Function to build the UI
+const buildUI = data => {
+    dateHolder.innerText = data.date
+    tempHolder.innerText = data.temp
+    contentHolder.innerText = data.content
+}
+
 generateButton.addEventListener('click', createEntry)
