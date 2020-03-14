@@ -28,8 +28,7 @@ const createEntry = async e => {
     // if no zip code entered, default to 90210
     let newZipCode = zipHolder.value || '90210'
     let newFeelings = feelingsHolder.value
-    // TODO: create function to get temperature
-    let newTemperature = null
+    let newTemperature = await getTemperature(newZipCode, key)
 
     const newData = {
         date: newDate,
