@@ -68,9 +68,9 @@ const getTemperature = async (zipCode, apiKey) => {
 
 // Function to build the UI
 const buildUI = data => {
-    dateHolder.innerText = data.date
-    tempHolder.innerText = data.temp
-    contentHolder.innerText = data.content
+    dateHolder.innerText = `Date: ${data.date}`
+    tempHolder.innerText = `Temperature: ${data.temp}`
+    contentHolder.innerText = `Feelings: ${data.content}`
 }
 
 generateButton.addEventListener('click', createEntry)
