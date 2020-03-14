@@ -1,4 +1,4 @@
-const projectData = {name: 'test'}
+const projectData = {}
 const apiKey = `ddb32c28535519ff8e479f5099a03619`
 
 const express = require('express')
@@ -20,5 +20,10 @@ app.listen(PORT, () => {
 
 // GET route
 app.get('/all', (req, res) => {
+    res.send(projectData)
+})
+
+// POST route
+app.post('/add', async (req, res) => {
     res.send(projectData)
 })
