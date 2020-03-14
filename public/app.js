@@ -19,3 +19,44 @@ const getAllEntries = async () => {
     console.log('body', body)
     return body
 }
+
+// Async POST - create an entry
+const createEntry = async e => {
+    e.preventDefault()
+
+    let newDate = moment().format('MMMM D, YYYY')
+    // if no zip code entered, default to 90210
+    let newZipCode = zipHolder.value || '90210'
+    let newFeelings = feelingsHolder.value
+    // TODO: create function to get temperature
+    let newTemperature = null
+
+    const newData = {
+        date: newDate,
+        temp: newTemperature,
+        content: newFeelings
+    }
+
+    const response = await fetch('/addEntry', {
+        method: 'POST',
+        headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            newData
+        })
+    })
+
+    const body = await response.json()
+    console.log(body)
+
+    if (response.status !== 200) {
+        throw Error(body.message)
+    }
+
+    // TODO: call a function to update UI
+
+}
+
+//TODO: attach createEntry function to an event listener
