@@ -19,7 +19,7 @@ app.listen(PORT, () => {
 })
 
 // GET route
-app.get('/all', (req, res) => {
+app.get('/getAllEntries', (req, res) => {
     res.send(projectData)
 })
 
