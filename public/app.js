@@ -59,4 +59,4 @@ const createEntry = async e => {
 
 }
 
-//TODO: attach createEntry function to an event listener
+generateButton.addEventListener('click', createEntry)
