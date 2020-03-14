@@ -54,7 +54,7 @@ const createEntry = async e => {
         throw Error(body.message)
     }
 
-    // TODO: call a function to update UI
+    buildUI(body.data)
 
 }
 
