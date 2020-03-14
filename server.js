@@ -24,6 +24,13 @@ app.get('/getAllEntries', (req, res) => {
 })
 
 // POST route
-app.post('/add', async (req, res) => {
-    res.send(projectData)
+app.post('/addEntry', (req, res) => {
+    let body = req.body.newData
+    projectData.date = body.date
+    projectData.temp = body.temp
+    projectData.content = body.content
+
+    res.status(200).json({
+        data: projectData
+    })
 })
