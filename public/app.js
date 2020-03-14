@@ -59,4 +59,12 @@ const createEntry = async e => {
 
 }
 
+// Function to retrieve temperature based on zip code
+const getTemperature = async (zipCode, apiKey) => {
+    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&units=imperial&appid=${apiKey}`)
+    const body = await response.json()
+
+    return body.main.temp.toFixed()
+}
+
 generateButton.addEventListener('click', createEntry)
